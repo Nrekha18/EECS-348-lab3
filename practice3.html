@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EECS 348 Lab Practice Three</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input {
+            padding: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 8px 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>EECS 348 Lab Practice Three</h1>
+    <p>Enter a password (at least 8 characters) and confirm it below.</p>
+
+    <label for="pw1">Password:</label>
+    <input type="password" id="pw1">
+
+    <label for="pw2">Confirm Password:</label>
+    <input type="password" id="pw2">
+
+    <button onclick="checkPasswords()">Submit</button>
+
+    <script>
+        function checkPasswords() {
+            var pw1 = document.getElementById("pw1").value;
+            var pw2 = document.getElementById("pw2").value;
+
+            if (pw1.length < 8) {
+                alert("The first password must be at least 8 characters long.");
+            } else if (pw2.length < 8) {
+                alert("The second password must be at least 8 characters long.");
+            } else if (pw1 !== pw2) {
+                alert("Passwords do not match.");
+            } else {
+                alert("Passwords matched!");
+            }
+        }
+    </script>
+
+</body>
+</html>
