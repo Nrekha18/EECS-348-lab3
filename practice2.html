@@ -8,6 +8,7 @@
             padding: 15px;
             margin: 20px 0;
             font-size: 18px;
+            color: rgb(0, 0, 0);
             border-color: rgb(0, 0, 0);
             border-width: 2px;
             border-style: solid;
@@ -24,6 +25,18 @@
 
     <p id="target-paragraph">Paragraph to be altered.</p>
 
+    <div class="control-group">
+        <label for="textR">Text Color R (0-255): </label>
+        <input type="text" id="textR" placeholder="e.g. 0">
+    </div>
+    <div class="control-group">
+        <label for="textG">Text Color G (0-255): </label>
+        <input type="text" id="textG" placeholder="e.g. 0">
+    </div>
+    <div class="control-group">
+        <label for="textB">Text Color B (0-255): </label>
+        <input type="text" id="textB" placeholder="e.g. 0">
+    </div>
     <div class="control-group">
         <label for="borderR">Border R (0-255): </label>
         <input type="text" id="borderR" placeholder="e.g. 0">
@@ -59,6 +72,10 @@
         function changeColor() {
             var p = document.getElementById("target-paragraph");
 
+            var rT = document.getElementById("textR").value;
+            var gT = document.getElementById("textG").value;
+            var bT = document.getElementById("textB").value;
+
             var rB = document.getElementById("borderR").value;
             var gB = document.getElementById("borderG").value;
             var bB = document.getElementById("borderB").value;
@@ -68,6 +85,7 @@
             var gBg = document.getElementById("bgG").value;
             var bBg = document.getElementById("bgB").value;
 
+            p.style.color = "rgb(" + rT + ", " + gT + ", " + bT + ")";
             p.style.borderColor = "rgb(" + rB + ", " + gB + ", " + bB + ")";
             p.style.borderWidth = width + "px";
             p.style.backgroundColor = "rgb(" + rBg + ", " + gBg + ", " + bBg + ")";
